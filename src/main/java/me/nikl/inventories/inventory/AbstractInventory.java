@@ -50,7 +50,7 @@ public abstract class AbstractInventory implements Inventory {
     }
 
     protected void registerInventory(Inventory inventory, String groupID) {
-        if (inventoryGroups.keySet().contains(groupID)) throw new IllegalArgumentException("Group " + groupID + " is not registered!");
+        if (!inventoryGroups.keySet().contains(groupID)) throw new IllegalArgumentException("Group " + groupID + " is not registered!");
         inventoryGroups.get(groupID).add(inventory);
     }
 

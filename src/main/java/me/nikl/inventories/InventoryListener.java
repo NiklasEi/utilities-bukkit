@@ -23,6 +23,7 @@ public class InventoryListener implements Listener {
         org.bukkit.inventory.Inventory inventory = event.getInventory();
         if (inventory == null) return;
         if (!(inventory.getHolder() instanceof InventoryHolder)) return;
+        event.setCancelled(true);
         ((InventoryHolder)inventory.getHolder()).onInventoryClick(event);
     }
 

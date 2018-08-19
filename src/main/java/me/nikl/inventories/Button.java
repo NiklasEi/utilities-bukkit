@@ -9,6 +9,8 @@ import org.bukkit.inventory.ItemStack;
 public interface Button {
     boolean onClick(InventoryClickEvent event);
     Inventory getParent();
+    void setParent(Inventory parent);
     int getSlot();
+    void setSlot(int slot);
     ItemStack getIcon();
 }

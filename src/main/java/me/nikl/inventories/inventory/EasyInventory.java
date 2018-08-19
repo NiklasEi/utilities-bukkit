@@ -1,7 +1,6 @@
 package me.nikl.inventories.inventory;
 
 import me.nikl.inventories.Button;
-import me.nikl.inventories.Inventory;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -58,9 +57,17 @@ public class EasyInventory extends AbstractInventory {
     @Override
     public void addButtons(Button... buttons) {
         for (Button button : buttons) {
-            bukkitInventory.setItem(button.getSlot(), button.getIcon());
-            this.buttons.put(button.getSlot(), button);
+            addButton(bukkitInventory.firstEmpty(), button);
         }
+    }
+
+    @Override
+    public void addButton(int slot, Button button) {
+        if (slot > bukkitInventory.getSize() || slot < 0) throw new IllegalArgumentException("Invalid slot: " + slot);
+        button.setParent(this);
+        button.setSlot(slot);
+        buttons.put(slot, button);
+        bukkitInventory.setItem(slot, button.getIcon());
     }
 
     @Override
