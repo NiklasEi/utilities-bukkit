@@ -55,9 +55,11 @@ public class EasyInventory extends AbstractInventory {
     }
 
     @Override
-    public void addButtons(Button... buttons) {
-        for (Button button : buttons) {
-            addButton(bukkitInventory.firstEmpty(), button);
+    public void addButtons(Button button, Button... buttons) {
+        addButton(bukkitInventory.firstEmpty(), button);
+        if (buttons == null) return;
+        for (Button buttonTemp : buttons) {
+            addButton(bukkitInventory.firstEmpty(), buttonTemp);
         }
     }
 
@@ -66,7 +68,16 @@ public class EasyInventory extends AbstractInventory {
         if (slot > bukkitInventory.getSize() || slot < 0) throw new IllegalArgumentException("Invalid slot: " + slot);
         button.setParent(this);
         button.setSlot(slot);
-        buttons.put(slot, button);
+        button.onPreRender();
+        buttons.put(button.getSlot(), button);
+        bukkitInventory.setItem(button.getSlot(), button.getIcon());
+        button.onAfterRender();
+    }
+
+    @Override
+    public void update(int slot) {
+        Button button = buttons.get(slot);
+        if (button == null) throw new IllegalArgumentException("No button found for slot " + slot);
         bukkitInventory.setItem(slot, button.getIcon());
     }
 
