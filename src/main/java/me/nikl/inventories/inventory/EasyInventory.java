@@ -87,6 +87,12 @@ public class EasyInventory extends AbstractInventory {
     }
 
     @Override
+    public void clear() {
+        bukkitInventory.clear();
+        buttons.clear();
+    }
+
+    @Override
     public void onInventoryClick(InventoryClickEvent event) {
         Button button;
         if ((button = buttons.get(event.getSlot())) == null) return;

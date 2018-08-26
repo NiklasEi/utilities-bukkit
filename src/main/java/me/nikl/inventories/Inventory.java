@@ -12,4 +12,5 @@ public interface Inventory extends InventoryHolder {
     void addButton(int slot, Button button);
     void update(int slot);
     org.bukkit.inventory.Inventory getBukkitInventory();
+    void clear();
 }
