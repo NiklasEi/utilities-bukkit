@@ -1,6 +1,6 @@
-package me.nikl.inventories.inventory;
+package me.nikl.utilities.bukkit.inventories.inventory;
 
-import me.nikl.inventories.Button;
+import me.nikl.utilities.bukkit.inventories.Button;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

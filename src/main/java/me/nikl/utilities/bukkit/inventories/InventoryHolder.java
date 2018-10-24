@@ -1,4 +1,4 @@
-package me.nikl.inventories;
+package me.nikl.utilities.bukkit.inventories;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;

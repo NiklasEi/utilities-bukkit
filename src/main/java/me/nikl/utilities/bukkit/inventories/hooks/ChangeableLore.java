@@ -1,4 +1,4 @@
-package me.nikl.inventories.hooks;
+package me.nikl.utilities.bukkit.inventories.hooks;
 
 import java.util.List;
 

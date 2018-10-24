@@ -1,4 +1,4 @@
-package me.nikl.inventories.button;
+package me.nikl.utilities.bukkit.inventories.button;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;

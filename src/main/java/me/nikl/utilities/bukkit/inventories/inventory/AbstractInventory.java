@@ -1,7 +1,7 @@
-package me.nikl.inventories.inventory;
+package me.nikl.utilities.bukkit.inventories.inventory;
 
-import me.nikl.inventories.Inventory;
-import me.nikl.inventories.InventoryListener;
+import me.nikl.utilities.bukkit.inventories.Inventory;
+import me.nikl.utilities.bukkit.inventories.InventoryListener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.Plugin;
